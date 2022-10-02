@@ -36,3 +36,6 @@ db.sequelize.sync().then(() => {
     })
 })
 
+app.get('/', (req, res) => {
+    res.status(200).send('<h1>Sound City Yoo</h1>')
+})
