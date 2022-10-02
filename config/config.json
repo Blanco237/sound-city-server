@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "soundcity237",
+    "password": "iGetInt0pc.com!",
+    "database": "soundcity",
+    "host": "db4free.net",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "soundcity237",
+    "password": "iGetInt0pc.com!",
+    "database": "soundcity",
+    "host": "db4free.net",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "soundcity237",
+    "password": "iGetInt0pc.com!",
+    "database": "soundcity",
+    "host": "db4free.net",
+    "dialect": "mysql"
+  }
+}
