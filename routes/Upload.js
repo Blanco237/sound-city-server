@@ -44,9 +44,7 @@ router.post('/audio', async (req, res) => {
             resource_type: "video"
         });
 
-        const audioURL = result.url.replace('http', 'https');
-
-        res.json(audioURL);
+        res.json(result);
     }
     catch(e) {
         res.status(400).json({error : e.message });
