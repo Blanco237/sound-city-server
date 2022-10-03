@@ -15,7 +15,7 @@ cloudinary.config({
 router.post('/image', async (req, res) => {
     console.log("Image Upload Request");
     const file = req.files.image;
-    if(!file){
+    if (!file) {
         console.log(req);
         return;
     }
@@ -33,19 +33,24 @@ router.post('/audio', async (req, res) => {
 
     console.log("Audio Upload")
 
-    const file = req.files.audio;
-    if (!file) {
-        console.log(req);
-        return;
+    try {
+        const file = req.files.audio;
+        if (!file) {
+            console.log(req);
+            return;
+        }
+        const result = await cloudinary.uploader.upload(file.tempFilePath, {
+            folder: "audio",
+            resource_type: "video"
+        });
+
+        const audioURL = result.url.replace('http', 'https');
+
+        res.json(audioURL);
     }
-    const result = await cloudinary.uploader.upload(file.tempFilePath, {
-        folder: "audio",
-        resource_type: "video"
-    });
-
-    const audioURL = result.url.replace('http', 'https');
-
-    res.json(audioURL);
+    catch(e) {
+        res.status(400).json({error : e.message });
+    }
 })
 
 
