@@ -43,7 +43,7 @@ router.post('/audio', async (req, res) => {
         resource_type: "video"
     });
 
-    const audioURL = result.replace('http', 'https');
+    const audioURL = result.url.replace('http', 'https');
 
     res.json(audioURL);
 })
