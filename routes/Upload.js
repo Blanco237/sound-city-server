@@ -47,6 +47,7 @@ router.post('/audio', async (req, res) => {
         res.json(result);
     }
     catch(e) {
+        console.log("Error Occured: ", e.message);
         res.status(400).json({error : e.message });
     }
 })
